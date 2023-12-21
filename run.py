@@ -139,7 +139,6 @@ github = 'github.com/Mark-Zuck'
 # LOGO
 def logo():
 	time.sleep (0.01)
-
 	jalan ('\x1b[1;97m⣿⣿⣿⡇⢩⠘⣴⣿⣥⣤⢦⢁⠄⠉⡄⡇⠛⠛⠛⢛⣭⣾⣿⣿⡏')
 	jalan ('\x1b[1;97m⣿⣿⣿⡇⠹⢇⡹⣿⣿⣛⣓⣿⡿⠞⠑⣱⠄⢀⣴⣿⣿⣿⣿⡟  💕   💖 💖 💞  ✨')
 	jalan ('\x1b[1;97m⣿⣿⣿⣧⣸⡄⣿⣪⡻⣿⠿⠋⠄⠄⣀⣀⢡⣿⣿⣿⣿⡿⠋     💕  ⭐ 💞 ')
@@ -154,7 +153,6 @@ def logo():
 	jalan ('\x1b[1;97m⠄⠄⠄⠄⠈⠻⣿⣿⣿⣿⣹⣿⣿⣿⡇⣿⣿⡿ \x1b[1;96m⣾⣿⣿ ⣾⣿⣷ ⣿   ⣿⢿⡿⣿ ⣾⠛⠛ ⢿ ⡿ " ⣾⠛⣷')
 	jalan ('\x1b[1;97m⠄⠄⣀⣴⣾⣶⡞⣿⣿⣿⣿⣿⣿⣿⣾⣿⡿⠃ \x1b[1;96m⣿   ⣿ ⣿ ⣿   ⣿⠙⠋⣿ ⣿⣿   ⣿     ⣫')
 	jalan ('\x1b[1;97m⣠⣾⣿⣿⣿⣿⣿⣹⣿⣿⣿⣿⣿⡟⣹⣿⣳⡄ \x1b[1;96m⢿⣿⣿ ⢿⣿⡿ ⢿⣿⣿ ⣿  ⣿ ⢿⣤⣤ ⣾ ⣷   ⢿⣤⡿')
-	print
 
 def banner():                
 	os.system('clear')
@@ -166,26 +164,13 @@ def banner():
 	jalan ('       \033[1;96m[\33[37;1mR\033[1;96m] \033[1;96m[\033[1;97mA\033[1;96m] \033[1;96m[\033[1;97mT\033[1;96m] \033[1;96m[\033[1;97mU\033[1;96m]  \033[1;96m[\033[1;97mE\033[1;96m] \033[1;96m[\033[1;97mR\033[1;96m] \033[1;96m[\33[37;1mR\033[1;96m] \033[1;96m[\033[1;97mO\033[1;96m] \033[1;96m[\033[1;97mR\033[1;96m]\033[1;96m')
 	print (' \033[1;96m  ____________________________________________')
 	print ('\033[1;97m\033[1;96m ¤\033[1;97m{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}\033[1;96m¤')
-
-id = []
-cp = []
-ok = []
-loop = 0
-    
-# CONVERT COOKIE DICT TO STRING
-def romz_xyz(cookie,venom={}):
-	for x in cookie.replace(' ','').strip().split(';'):
-		kuki = x.split('=')
-		if len(kuki) > 1:
-			venom.update({kuki[0]: kuki[1]})
-	return venom
-
-# MENU MASUK
-def Masuk():
+	
+# METHODE LOGIN
+def login():
 	try:
 		ses = requests.Session()
 		logo()
-		kukis = input(f'\n{P} Masukan cookie anda :{K} ')
+		kukis = input(f'\n{P} Masukan cookie anda :{B} ')
 		url_tokB = ses.get('https://www.facebook.com/adsmanager/manage/campaigns',cookies = {"cookie":kukis})
 		ids_tokB = re.search("act=(.*?)&nav_source", url_tokB.text).group(1)
 		con_tokB = ses.get(f'https://www.facebook.com/adsmanager/manage/campaigns?act={ids_tokB}&nav_source=no_referrer', cookies = {"cookie":kukis})
@@ -203,10 +188,8 @@ def Masuk():
 		except:pass
 		print(e)
 		exit()
-#  MENU		
-# MENU PILIHAN INI AJG
-hapus = ('rm -rf data/token.txt && rm -rf data/cookie.txt')
-def Menu():
+#  MENU
+def menu():
 	try:
 		token = open("data/token.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
@@ -220,26 +203,20 @@ def Menu():
 			exit(f'{M} ! cookie invalid')
 	except (FileNotFoundError,KeyError,IOError):
 #		print (f"{M} ! cookie invalid");jeda(2)
-		Masuk()
+		login()
 	except requests.exceptions.ConnectionError:
 		exit(f"{M} ! tidak ada koneksi")
 	banner()
+	print('\n')
+	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mCrack dari  ID publik')
+	print (' \x1b[1;96m[\x1b[1;97m2\x1b[1;96m] \x1b[1;97mCrack \x1b[1;92mUNLIMITED')
+	print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mCrack dari  pencarian nama')
+	print (' \x1b[1;96m[\x1b[1;97m4\x1b[1;96m] \x1b[1;97mCrack dari  jumlah follower')
+	print (' \x1b[1;96m[\x1b[1;97m5\x1b[1;96m] \x1b[1;97mCrack dari  anggota group')
+	print (' \x1b[1;96m[\x1b[1;97m6\x1b[1;96m] \x1b[1;97mLihat hasil crack')
+	print (' \x1b[1;96m[\x1b[1;97m7\x1b[1;96m] \x1b[1;97mSetting user agent')
+	print (' \x1b[1;96m[\x1b[1;97m0\x1b[1;96m] \x1b[1;91mKeluar')
 	print('')
-	print('')
-	print (' %s[%s01%s] %sCrack dari publik'%(O,P,O,P))
-	print (' %s[%s02%s] %sCrack %sUNLIMITED'%(O,P,O,P,H))
-	print (' %s[%s03%s] %sCrack dari follower'%(O,P,O,P))
-	print (' %s[%s04%s] %sCrack dari reaction post'%(O,P,O,P))
-	print (' %s[%s05%s] %sCrack dari komentar post'%(O,P,O,P))
-	print (' %s[%s06%s] %sCrack dari anggota group'%(O,P,O,P))
-	print (' %s[%s07%s] %sCrack dari pencarian nama'%(O,P,O,P))
-	print (' %s[%s08%s] %sCrack dari pesan mesengger'%(O,P,O,P))
-	print (' %s[%s09%s] %sCrack dari saran teman'%(O,P,O,P))
-	print (' %s[%s10%s] %sLihat hasil crack'%(O,P,O,P))
-	print (' %s[%s11%s] %sCheckpoint detektor'%(O,P,O,P))
-	print (' %s[%s12%s] %sCek ID'%(O,P,O,P))
-	print (' %s[%s13%s] %sSpam limited editon'%(O,P,O,P))
-	print (' %s[%srm%s] %sHapus data login'%(O,P,O,P))
 	romz=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
 	if romz in ['']:print ("\n ! jangan kosong")
 	elif romz in ['1']:publik(coki)
@@ -262,52 +239,12 @@ def Menu():
 		else:
 			open('ugent.txt','w').write(us)
 	elif romz in ['0']:
-		try:os.system (hapus)
+		try:os.remove("data/cookie.txt")
 		except:pass
-		try:os.system("clear")
+		try:os.remove("data/token.txtt")
 		except:pass
 	else:
 		print ("\n ! isi yg benar")
-
-def pilih(token,coki):
-	slut = input("\n %s[%s?%s] %sPILIH %s: %s"%(O,P,O,O,H,K))
-	if slut in['',' ']:
-		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
-	elif slut in['1','01']:
-		PublikGRAPH(token,coki)
-	elif slut in['2','02']:
-		MassalPublikGRAPH(token,coki)
-	elif slut in['3','03']:
-		FollowGRAPH(token,coki)
-	elif slut in['4','04']:
-		ComingSoon()
-	elif slut in['5','05']:
-		ComingSoon()
-	elif slut in['6','06']:
-		ComingSoon()
-	elif slut in['7','07']:
-		ComingSoon()
-	elif slut in['8','08']:
-		ComingSoon()
-	elif slut in['9','09']:
-		ComingSoon()
-	#elif slut in['9','09']:
-		#useragent()
-	elif slut in['10','10']:
-		hasil_fb()
-	elif slut in['10']:
-		file_cp()
-	elif slut in['11']:
-		ingfoh()
-	elif slut in['rm','RM','Rm']:
-		os.system(hapus)
-	elif slut in['0','00']:
-		exit()
-	else:
-		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
-		
-def ComingSoon():
-	jalan ("\n %sMenu belum tersedia... "%(O));exit()
 			
 # CRACK PUBLIK 
 def PublikGRAPH(token,cookie):
