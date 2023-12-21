@@ -274,30 +274,6 @@ def Menu():
 	print (' %s[%srm%s] %sHapus data login'%(O,P,O,P))
 	pilih(token,coki)
 
-def activate_licensi():
-	os.system("clear")
-	print("\n\n\x1b[1;97mSudah mempunyai licensi key? ketik \x1b[1;95madmin\x1b[1;97m untuk chat admin, ketik \x1b[1;92mgets\x1b[1;97m untuk mengambil licensi melalui website RATUERROR\n")
-	key = input(" [>] licensi: ").lower()
-	if "gets" in key:
-		os.system("xdg-open https://fbkey.ratuerror.com/register/")
-		activate_licensi()
-	elif "admin" in key:
-		os.system("xdg-open https://wa.me/6287799183568?text=Jessica%20cantik....beli%20lisensi%20dooong")
-		activate_licensi()
-	else:
-		gets = requests.get("https://fbkey.ratuerror.com/check.php?key=%s&dev=%s" % (key.strip(), platform.platform())).json()
-		if "error" in gets["status"]:
-			exit(" [×] message: "+gets["msg"]+"\n\n")
-		elif "berlaku" in gets["status"]:
-			print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
-			open(".licensi","w").write(key.strip())
-			Menu()
-			os.system("clear")
-		elif "kadaluarsa" in gets["status"]:
-			exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
-		else:
-			exit("[!] licensi tidak valid")
-
 def pilih(token,coki):
 	slut = input("\n %s[%s?%s] %sPILIH %s: %s"%(O,P,O,O,H,K))
 	if slut in['',' ']:
