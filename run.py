@@ -182,9 +182,9 @@ def login():
 		print (f"\n{H} √ login berhasil");jeda(2)
 		menu()
 	except Exception as e:
-		try:os.remove("data/cookie.txt")
+		try:os.system (hapus)
 		except:pass
-		try:os.remove("data/token.txtt")
+		try:os.system("clear")
 		except:pass
 		print(e)
 		exit()
