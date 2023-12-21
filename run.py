@@ -180,7 +180,7 @@ def romz_xyz(cookie,venom={}):
 	return venom
 
 # MENU MASUK
-def masuk():
+def Masuk():
 	try:
 		ses = requests.Session()
 		logo()
