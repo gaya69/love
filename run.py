@@ -262,7 +262,7 @@ def Menu():
 		else:
 			open('ugent.txt','w').write(us)
 	elif romz in ['0']:
-		try:os.system (hapus")
+		try:os.system (hapus)
 		except:pass
 		try:os.system("clear")
 		except:pass
