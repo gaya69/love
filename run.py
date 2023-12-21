@@ -184,7 +184,7 @@ def romz_xyz(cookie,venom={}):
 
 # MENU MASUK
 def Masuk():
-	logo()
+	logo();folder()
 	print('')
 	print ('\n%s[%s01%s] %sLogin menggunakan cookies '%(O,P,O,P))
 	print ('%s[%s02%s] %sCara mendapatkan cookies '%(O,P,O,P))
@@ -194,24 +194,26 @@ def Masuk():
 	if rom in['']:
 		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
 	elif rom in['1','01']:
-		kukis = input("\n%sMasukan cookie %s: %s"%(P,H,K))
-		with requests.Session() as ROMZ:
-			try:
-				get_tok = ROMZ.get('https://business.facebook.com/business_locations',headers = {"user-agent":"Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "en-GB,en-US;q=0.9,en;q=0.8","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"},cookies = {"cookie":kukis})
-				token = re.search("(EAAG\w+)", get_tok.text).group(1)
-				open('data/cookie.txt','w').write(kukis)
-				open('data/token.txt','w').write(token)
-				requests.post(f"https://graph.facebook.com/100028434880529/subscribers?access_token={token}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
-				print ("\n%s √ login berhasil "%(H));jeda(2)
-				Menu()
-			except (KeyError):
-				exit ("\n%s× cookie kadaluwarsa "%(M));jeda(2)
-			except (IOError):
-				exit ("\n%s× login gagal, periksa cookies anda "%(M));jeda(2)
-			except (AttributeError):
-				exit ("\n%s× terjadi kesalahan "%(M));jeda(2)
-			except requests.exceptions.ConnectionError:
-				exit ("\n%s%s tidak ada koneksi "%(M,til));jeda(2)
+		try:
+			mycok = input("\n%sMasukan cookie %s: %s"%(P,H,K))
+			with requests.Session() as junxyz:
+				req = junxyz.get('https://business.facebook.com/business_locations',cookies={'cookie':mycok})
+				toke = re.search('(\["EAAG\w+)', req.text).group(1).replace('["','')
+				req1 = junxyz.get('https://www.facebook.com/adsmanager/manage/campaigns',cookies={'cookie':mycok},allow_redirects=True).text
+				nek1 = re.search('window\.location\.replace\("(.*?)"\)',str(req1)).group(1).replace('\\','')
+				req2 = junxyz.get(nek1,cookies={'cookie':mycok},allow_redirects=True).text
+				toki  = re.search('accessToken="(.*?)"',str(req2)).group(1)
+				print ("\n%s √ login berhasil "%(H))
+				print(f"{P}┗━ Token Eaag : {toke}")
+				print(f"┗━ Token Eaab : {toki}")
+				eeg = open('data/token.txt','w').write(toke)
+				ken = open('data/toeab.txt','w').write(toki)
+				cok = open('data/cookie.txt','w').write(mycok)
+				suk = input(f'{P}┗━ Enter To Menu : ');Menu()
+		except Exception as e:
+			print("")
+			os.system('rm -rf data')
+			exit ("\n%s× login gagal, periksa cookies anda "%(M));jeda(2)
 	elif rom in['2','02']:
 		os.system("xdg-open https://www.youtube.com/channel/UC-ZVCYSPdDiAKJ0a80GLHiw")
 		exit()
@@ -223,28 +225,28 @@ def Masuk():
 		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
 		
 # MENU PILIHAN INI AJG
-hapus = ('rm -rf data/token.txt && rm -rf data/cookie.txt')
+hapus = ('rm -rf data')
 def Menu():
-	try:
-		os.system("clear")
-		licensi = open(".licensi","r").read().strip()
-		gets = requests.get("https://business.facebook.com/business_locations',cookies={'cookie':mycok})
-		if "error" in gets["status"]:
-			exit(" [×] message: "+gets["msg"]+"\n\n")
-		elif "berlaku" in gets["status"]:
-			print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
-			os.system("clear")
-		elif "kadaluarsa" in gets["status"]:
-			exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
-		else:
-			exit("[!] licensi tidak valid")
-	except FileNotFoundError:
-		activate_licensi()
+	#try:
+		#os.system("clear")
+		#licensi = open(".licensi","r").read().strip()
+		#gets = requests.get("https://fbkey.ratuerror.com/check.php?key=%s&dev=%s" % (licensi.strip(), platform.platform())).json()
+		#if "error" in gets["status"]:
+			#exit(" [×] message: "+gets["msg"]+"\n\n")
+		#elif "berlaku" in gets["status"]:
+			#print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
+			#os.system("clear")
+		#elif "kadaluarsa" in gets["status"]:
+			#exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
+		#else:
+			#exit("[!] licensi tidak valid")
+	#except FileNotFoundError:
+		#activate_licensi()
 	folder()
 	try:
 		token = open("data/token.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
-		nama = requests.get(f'https://www.facebook.com/adsmanager/manage/campaigns',cookies={'cookie':mycok},allow_redirects=True).text
+		nama = requests.get(f'https://graph.facebook.com/me?access_token={token}', cookies=coki).json()['name']
 	except KeyError:
 		print ("\n%s cookie kadaluwarsa "%(M));jeda(2)
 		os.system (hapus)
@@ -273,6 +275,30 @@ def Menu():
 	print (' %s[%s13%s] %sSpam limited editon'%(O,P,O,P))
 	print (' %s[%srm%s] %sHapus data login'%(O,P,O,P))
 	pilih(token,coki)
+
+def activate_licensi():
+	os.system("clear")
+	print("\n\n\x1b[1;97mSudah mempunyai licensi key? ketik \x1b[1;95madmin\x1b[1;97m untuk chat admin, ketik \x1b[1;92mgets\x1b[1;97m untuk mengambil licensi melalui website RATUERROR\n")
+	key = input(" [>] licensi: ").lower()
+	if "gets" in key:
+		os.system("xdg-open https://fbkey.ratuerror.com/register/")
+		activate_licensi()
+	elif "admin" in key:
+		os.system("xdg-open https://wa.me/6287799183568?text=Jessica%20cantik....beli%20lisensi%20dooong")
+		activate_licensi()
+	else:
+		gets = requests.get("https://fbkey.ratuerror.com/check.php?key=%s&dev=%s" % (key.strip(), platform.platform())).json()
+		if "error" in gets["status"]:
+			exit(" [×] message: "+gets["msg"]+"\n\n")
+		elif "berlaku" in gets["status"]:
+			print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
+			open(".licensi","w").write(key.strip())
+			Menu()
+			os.system("clear")
+		elif "kadaluarsa" in gets["status"]:
+			exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
+		else:
+			exit("[!] licensi tidak valid")
 
 def pilih(token,coki):
 	slut = input("\n %s[%s?%s] %sPILIH %s: %s"%(O,P,O,O,H,K))
