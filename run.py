@@ -209,17 +209,19 @@ def Menu():
 	try:
 		token = open("data/token.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
-		nama = requests.get(f'https://graph.facebook.com/me?access_token={token}', cookies=coki).json()['name']
-	except KeyError:
-		print ("\n%s cookie kadaluwarsa "%(M));jeda(2)
-		os.system (hapus)
-		Masuk()
-	except FileNotFoundError:
-		os.system (hapus)
-		os.system("clear")
-		Masuk()
-	except requests.exceptions.ConnectionError as konek:
-		exit (f"\n%s%s gagal memuat tidak ada koneksi: {konek}"%(M,til));jeda(2)
+		try:
+			nama=requests.get(f"https://mbasic.facebook.com/profile.php?v=info",cookies = coki).text 
+		except:
+			try:os.remove("data/cookie.txt")
+			except:pass
+			try:os.remove("data/token.txtt")
+			except:pass
+			exit(f'{M} ! cookie invalid')
+	except (FileNotFoundError,KeyError,IOError):
+#		print (f"{M} ! cookie invalid");jeda(2)
+		login()
+	except requests.exceptions.ConnectionError:
+		exit(f"{M} ! tidak ada koneksi")
 	banner()
 	print('')
 	print('')
