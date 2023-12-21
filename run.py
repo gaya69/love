@@ -219,7 +219,7 @@ def Menu():
 			exit(f'{M} ! cookie invalid')
 	except (FileNotFoundError,KeyError,IOError):
 #		print (f"{M} ! cookie invalid");jeda(2)
-		login()
+		Masuk()
 	except requests.exceptions.ConnectionError:
 		exit(f"{M} ! tidak ada koneksi")
 	banner()
