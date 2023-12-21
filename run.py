@@ -239,7 +239,34 @@ def Menu():
 	print (' %s[%s12%s] %sCek ID'%(O,P,O,P))
 	print (' %s[%s13%s] %sSpam limited editon'%(O,P,O,P))
 	print (' %s[%srm%s] %sHapus data login'%(O,P,O,P))
-	pilih(token,coki)
+	romz=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
+	if romz in ['']:print ("\n ! jangan kosong")
+	elif romz in ['1']:publik(coki)
+	elif romz in ['2']:massal(token,coki)
+	elif romz in['3']:mail_name()
+	elif romz in['4']:follow(token,coki)
+	elif romz in['5']:exit()
+	elif romz in ['6']:hasil()
+	elif romz in ['7']:
+		crack().UA()
+		uas = open('ugent.txt','r').read()
+		print (f"{P} ! User-Agent saat ini: {U}{uas}")
+		print (f"{P} ! jika tidak mau ingin mengganti User-Agent ketik {H}no{P} ")
+		us = input (" ? User-Agent: ")
+		if us in['no','No','NO']:
+			exit()
+		elif us in['']:
+			uas = ("Mozilla/5.0 (Linux; Android 4.2.2; FreeTAB 9000 IPS IC Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.116 Safari/537.36")
+			open('ugent.txt','w').write(uas)
+		else:
+			open('ugent.txt','w').write(us)
+	elif romz in ['0']:
+		try:os.remove("data/cookie.txt")
+		except:pass
+		try:os.remove("data/token.txtt")
+		except:pass
+	else:
+		print ("\n ! isi yg benar")
 
 def pilih(token,coki):
 	slut = input("\n %s[%s?%s] %sPILIH %s: %s"%(O,P,O,O,H,K))
