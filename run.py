@@ -199,7 +199,7 @@ def Menu():
 			try:os.system (hapus)
 			except:pass
 			try:os.system("clear")
-			exit(f'{M} ! cookie invalid')
+			exit()
 	except (FileNotFoundError,KeyError,IOError):
 #		print (f"{M} ! cookie invalid");jeda(2)
 		login()
