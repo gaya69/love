@@ -189,7 +189,7 @@ def login():
 		print(e)
 		exit()
 #  MENU
-def menu():
+def Menu():
 	try:
 		token = open("data/token.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
