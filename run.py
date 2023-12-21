@@ -196,10 +196,9 @@ def Menu():
 		try:
 			nama=requests.get(f"https://mbasic.facebook.com/profile.php?v=info",cookies = coki).text 
 		except:
-			try:os.remove("data/cookie.txt")
+			try:os.system (hapus)
 			except:pass
-			try:os.remove("data/token.txtt")
-			except:pass
+			try:os.system("clear")
 			exit(f'{M} ! cookie invalid')
 	except (FileNotFoundError,KeyError,IOError):
 #		print (f"{M} ! cookie invalid");jeda(2)
@@ -239,9 +238,9 @@ def Menu():
 		else:
 			open('ugent.txt','w').write(us)
 	elif romz in ['0']:
-		try:os.remove("data/cookie.txt")
+		try:os.system (hapus)
 		except:pass
-		try:os.remove("data/token.txtt")
+		try:os.system("clear")
 		except:pass
 	else:
 		print ("\n ! isi yg benar")
