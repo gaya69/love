@@ -139,6 +139,7 @@ github = 'github.com/Mark-Zuck'
 # LOGO
 def logo():
 	time.sleep (0.01)
+
 	jalan ('\x1b[1;97m⣿⣿⣿⡇⢩⠘⣴⣿⣥⣤⢦⢁⠄⠉⡄⡇⠛⠛⠛⢛⣭⣾⣿⣿⡏')
 	jalan ('\x1b[1;97m⣿⣿⣿⡇⠹⢇⡹⣿⣿⣛⣓⣿⡿⠞⠑⣱⠄⢀⣴⣿⣿⣿⣿⡟  💕   💖 💖 💞  ✨')
 	jalan ('\x1b[1;97m⣿⣿⣿⣧⣸⡄⣿⣪⡻⣿⠿⠋⠄⠄⣀⣀⢡⣿⣿⣿⣿⡿⠋     💕  ⭐ 💞 ')
@@ -261,9 +262,9 @@ def Menu():
 		else:
 			open('ugent.txt','w').write(us)
 	elif romz in ['0']:
-		try:os.remove("data/cookie.txt")
+		try:os.system (hapus")
 		except:pass
-		try:os.remove("data/token.txtt")
+		try:os.system("clear")
 		except:pass
 	else:
 		print ("\n ! isi yg benar")
