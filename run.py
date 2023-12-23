@@ -345,7 +345,7 @@ def PublikGRAPH(token,cookie):
 	try:
 		print ("\n %sPastikan daftar teman bersifat %sPUBLIK "%(P,H))
 		user = input(' %sMasukan %sUsername%s/%sID%s : %s'%(P,H,P,K,P,M))
-		po = requests.get(f"https://graph.facebook.com/v13.0/{user}?fields=friends.limit(5000)&access_token={token}",cookies=cookie).json()
+		po = requests.get(f"https://graph.facebook.com/{user}?fields=friends&access_token={tokz}",cookies=cook).json()
 		for i in po['friends']['data']:
 			id.append(f"{i['id']}<=>{i['name']}")
 		#print(f"\r{U}{til}{O} Mengumpulkan Id {M}> {U}[{H}{len(self.id)}{U}] ",end="")
